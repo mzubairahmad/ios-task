@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CampaignListingViewController" customModule="CampaignBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MPh-hb-8E4" customClass="CampaignListingView" customModule="CampaignBrowser" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KMS-9b-u14">
@@ -26,44 +24,58 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="campaignCell" id="Kec-Ca-5D8" customClass="CampaignCell" customModule="CampaignBrowser" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                                <rect key="frame" x="7" y="0.0" width="414" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GMI-l0-LRG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3t-mf-lUQ">
-                                            <rect key="frame" x="8" y="8" width="359" height="267"/>
+                                            <rect key="frame" x="8" y="0.0" width="398" height="298.66666666666669"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="h3t-mf-lUQ" secondAttribute="height" multiplier="4:3" id="C4f-89-0Ij"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiC-pw-PH8" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="202.5" width="60.5" height="36.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiC-pw-PH8" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="298.66666666666669" width="398" height="20.333333333333314"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKV-MD-vzF" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="239" width="359" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKV-MD-vzF" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="327" width="398" height="273"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="8"/>
                                             <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="h3t-mf-lUQ" secondAttribute="trailing" id="0Qv-Ly-s5x"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="iKV-MD-vzF" secondAttribute="trailing" id="4FB-dA-Inc"/>
-                                    <constraint firstItem="iKV-MD-vzF" firstAttribute="leading" secondItem="Kec-Ca-5D8" secondAttribute="leadingMargin" id="760-sQ-xsE"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="iKV-MD-vzF" secondAttribute="bottom" constant="8" id="AgS-3w-y75"/>
-                                    <constraint firstItem="YiC-pw-PH8" firstAttribute="leading" secondItem="Kec-Ca-5D8" secondAttribute="leadingMargin" id="PgD-gW-tZP"/>
-                                    <constraint firstItem="iKV-MD-vzF" firstAttribute="top" secondItem="YiC-pw-PH8" secondAttribute="bottom" id="QqG-b8-yhQ"/>
-                                    <constraint firstItem="h3t-mf-lUQ" firstAttribute="top" secondItem="Kec-Ca-5D8" secondAttribute="topMargin" id="bUW-eS-iVs"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="h3t-mf-lUQ" secondAttribute="bottom" id="uaV-3P-jj4"/>
-                                    <constraint firstItem="h3t-mf-lUQ" firstAttribute="leading" secondItem="Kec-Ca-5D8" secondAttribute="leadingMargin" id="wC4-Bv-2Cj"/>
-                                </constraints>
-                                <size key="customSize" width="375" height="283"/>
+                                    <constraints>
+                                        <constraint firstItem="h3t-mf-lUQ" firstAttribute="top" secondItem="GMI-l0-LRG" secondAttribute="top" id="1Br-Ra-RK3"/>
+                                        <constraint firstAttribute="bottom" secondItem="iKV-MD-vzF" secondAttribute="bottom" id="9Nc-36-XxL"/>
+                                        <constraint firstItem="h3t-mf-lUQ" firstAttribute="leading" secondItem="GMI-l0-LRG" secondAttribute="leading" constant="8" id="FLe-ck-mEb"/>
+                                        <constraint firstAttribute="trailing" secondItem="h3t-mf-lUQ" secondAttribute="trailing" constant="8" id="OW3-yr-1m7"/>
+                                        <constraint firstAttribute="trailing" secondItem="iKV-MD-vzF" secondAttribute="trailing" constant="8" id="RFC-o2-Hr6"/>
+                                        <constraint firstItem="YiC-pw-PH8" firstAttribute="leading" secondItem="GMI-l0-LRG" secondAttribute="leading" constant="8" id="auX-Nn-RmF"/>
+                                        <constraint firstItem="YiC-pw-PH8" firstAttribute="top" secondItem="h3t-mf-lUQ" secondAttribute="bottom" id="avn-nz-cRl"/>
+                                        <constraint firstItem="iKV-MD-vzF" firstAttribute="leading" secondItem="GMI-l0-LRG" secondAttribute="leading" constant="8" id="fCW-ro-LXH"/>
+                                        <constraint firstAttribute="trailing" secondItem="YiC-pw-PH8" secondAttribute="trailing" constant="8" id="gKj-nt-kyt"/>
+                                        <constraint firstItem="iKV-MD-vzF" firstAttribute="top" secondItem="YiC-pw-PH8" secondAttribute="bottom" constant="8" id="wiF-F5-hCt"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="414" height="600"/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="iKV-MD-vzF" id="Zvs-Xr-6X8"/>
                                     <outlet property="imageView" destination="h3t-mf-lUQ" id="MKZ-D5-97E"/>
@@ -71,14 +83,14 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="loadingIndicatorCell" id="SZh-Y0-q4r">
-                                <rect key="frame" x="0.0" y="293" width="375" height="225"/>
+                                <rect key="frame" x="26.666666666666668" y="610" width="375" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o42-h4-YUU">
-                                            <rect key="frame" x="169" y="94.5" width="37" height="37"/>
+                                            <rect key="frame" x="169" y="94" width="37" height="37"/>
                                             <color key="color" red="0.32549019610000002" green="0.68627450980000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -102,7 +114,15 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="udm-JU-wgA" customClass="LoadingDataSource" customModule="CampaignBrowser" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="32.242990654205606" y="36.933045356371494"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="YiC-pw-PH8">
+            <size key="intrinsicContentSize" width="44.666666666666664" height="20.333333333333332"/>
+        </designable>
+        <designable name="iKV-MD-vzF">
+            <size key="intrinsicContentSize" width="28.333333333333332" height="12"/>
+        </designable>
+    </designables>
 </document>

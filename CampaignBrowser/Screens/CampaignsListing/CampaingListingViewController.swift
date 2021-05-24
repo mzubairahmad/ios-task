@@ -17,7 +17,10 @@ class CampaignListingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // this will make CollectionView's cell dynamic
+        let layout = self.typedView.collectionViewLayout as? UICollectionViewFlowLayout
+        // setting our average/estimated cell size
+        layout?.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width, height: 450)
         assert(typedView != nil)
     }
 

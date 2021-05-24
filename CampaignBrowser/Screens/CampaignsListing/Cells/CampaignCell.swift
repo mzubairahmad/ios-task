@@ -50,4 +50,25 @@ class CampaignCell: UICollectionViewCell {
         assert(descriptionLabel != nil)
         assert(imageView != nil)
     }
+    
+    // https://developer.apple.com/documentation/uikit/uicollectionreusableview/1620132-preferredlayoutattributesfitting
+    // We can use preferredLayoutAttributesFitting(_:). This come from UICollectionReusableView.
+    // It gives the cell a chance to modify the attributes provided by the layout object.
+    // These attributes represent the values that the layout intends to apply to the cell.
+    // Finaly it returns the attributes to apply to the cell
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        // getting size prefferd attributes of super
+        let collectionViewLayoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
+        // target estimates
+        let targetSize = CGSize(width: layoutAttributes.frame.width, height: 0)
+        // setting layout size priority to Width, as we have fix width to available space as per device.
+        // height can vary with content available
+        let autoLayoutSize = systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: UILayoutPriority.required, verticalFittingPriority: UILayoutPriority.defaultLow)
+        // frame with autoLayout calculations
+        let autoLayoutFrame = CGRect(origin: collectionViewLayoutAttributes.frame.origin, size: autoLayoutSize)
+        // updating collectionViewLayoutAttributes frame and returning
+        collectionViewLayoutAttributes.frame = autoLayoutFrame
+        return collectionViewLayoutAttributes
+    }
 }

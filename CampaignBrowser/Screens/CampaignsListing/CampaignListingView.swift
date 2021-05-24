@@ -79,11 +79,11 @@ class ListingDataSource: NSObject, UICollectionViewDataSource, UICollectionViewD
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: 450)
-    }
-
+    // sizeForItemAt indexPath:  is no more required as we are using dynamic size calaculation, thats why it is commented. We also can remove below code
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.size.width, height: 450)
+//    }
 }
 
 
